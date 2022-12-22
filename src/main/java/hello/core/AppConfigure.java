@@ -18,16 +18,23 @@ public class AppConfigure {
     *  의존관계에 대한 고민을 AppConfigure 가 담당.
     *  DIP 완성 -> 구현체는 추상에만 의존하면 된다.
     *  역할과 구현이 드러나도록 리팩토링*/
+
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfigure.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfigure.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfigure.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean

@@ -18,7 +18,13 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository.findById(memberId);
     }
 
+    @Override
     public Grade findGrade(Long memberId){
         return memberRepository.findById(memberId).getGrade();
+    }
+
+    //테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
