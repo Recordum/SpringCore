@@ -1,0 +1,47 @@
+[33mcommit 4abce6fe9bee904f87fbd097e9f4352565b153f4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Thu Dec 22 16:51:23 2022 +0900
+
+    Bean 메타정보 -BeanDefinition
+
+[33mcommit 5da42f02c49da0b1d109d0bfa853edfd23204c9c[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Thu Dec 22 16:50:52 2022 +0900
+
+    xml로 설정 -appConfig.xml
+
+[33mcommit a785e8e3d09bff1a2dc0f495db6bc01b4b4edf7d[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Thu Dec 22 14:52:25 2022 +0900
+
+    Bean 조회Test
+
+[33mcommit de4a3d753b984a29f89cdb9fbcd5cf96a7fbe678[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Wed Dec 21 22:05:02 2022 +0900
+
+    Spring 전환(ApplicationContext 추가)
+
+[33mcommit 86b53579365a739d6b0d3fae6df5048bad28e899[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Wed Dec 21 17:29:57 2022 +0900
+
+    AppConfigure 리팩터링
+
+[33mcommit 90aff850afe4f03c9855acf9b6f48a082ef88961[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Wed Dec 21 16:48:18 2022 +0900
+
+    AppConfigure 추가 : 구현 객체 생성 및 주입(DIP)
+
+[33mcommit 58929d653680e69b38054b5fa7f9a0e8b511bf90[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Wed Dec 21 14:47:04 2022 +0900
+
+    할인정책 변경
+
+[33mcommit 5b5f66f447ca5baa6c70c71faa8e8cb758af4950[m
+Author: mingyu <mingyu.oh15b@gmail.com>
+Date:   Wed Dec 21 00:17:08 2022 +0900
+
+    주문 할인 도메인 실행 및 테스트
