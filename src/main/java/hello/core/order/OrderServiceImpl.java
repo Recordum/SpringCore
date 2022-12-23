@@ -6,21 +6,15 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor //final 이 붙은 매개변수를 포함한 생성자 자동 생성.(롬복적용)
 public class OrderServiceImpl implements OrderService{
-    //필드 주입 Test 시 외부에서 더미 객체를 만들기가 어려움(안티패턴)
-/*    @Autowired */ private final MemberRepository memberRepository;
-/*    @Autowired */ private final DiscountPolicy discountPolicy; //DIP를 지키기 위해 인터페이스에만 의존.
-
-
-    @Autowired //생성자 주입 (생성자가 1개만 존재시, @Autowired 생략가능.)
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy; //DIP를 지키기 위해 인터페이스에만 의존.
 
 
     @Override
@@ -29,8 +23,8 @@ public class OrderServiceImpl implements OrderService{
         int discountPrice = discountPolicy.discount(member, itemPrice);
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
-    //테스트용
 
+    //테스트용
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }
