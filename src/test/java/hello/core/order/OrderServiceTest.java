@@ -32,6 +32,16 @@ public class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA" , 10000);
         assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+    //필드 주입시 Test 할려면 NullPointerException 이 터짐
+  /*  @Test
+    void fieldInjectionTest() {
+        OrderServiceImpl orderService1 = new OrderServiceImpl();
+        orderService1.createOrder(1L , "iteamA" ,10000);
+    }*/
+
+    //수정자 자동주입 TEST
+
+
 
 
 }
