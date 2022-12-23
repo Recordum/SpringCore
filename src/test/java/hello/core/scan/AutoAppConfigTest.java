@@ -1,9 +1,9 @@
 package hello.core.scan;
 
 import hello.core.AutoAppConfig;
-import hello.core.member.MemberRepository;
-import hello.core.member.MemberService;
-import hello.core.member.MemberServiceImpl;
+import hello.core.discount.DiscountPolicy;
+import hello.core.member.*;
+import hello.core.order.Order;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
@@ -26,5 +26,8 @@ public class AutoAppConfigTest {
         OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
         MemberRepository memberRepository = bean.getMemberRepository();
         System.out.println("memberRepository = " + memberRepository);
+        memberService.join(new Member(1L, "min gyu" , Grade.VIP));
+        Order order = bean.createOrder(1L, "셔츠", 20000);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(2000); // @Primary 보다 @Qualifier 가 우선권
     }
 }
