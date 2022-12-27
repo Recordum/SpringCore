@@ -1,12 +1,19 @@
 package hello.core.lifecycle;
 
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
+@Component
 public class NetworkClient {
     private String url;
 
     public NetworkClient() {
+
         System.out.println("생성자 호출, url = " + url);
+        this.setUrl("http://hello-spring.dev");
 
     }
 
@@ -30,12 +37,13 @@ public class NetworkClient {
     }
 
 
+    @PostConstruct
     public void init() throws Exception {
         connect();
         call("초기화 연결 메시지");
     }
 
-
+    @PreDestroy
     public void close() throws Exception {
         disconnect();
     }
